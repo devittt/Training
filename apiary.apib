@@ -1,0 +1,68 @@
+FORMAT: 1A
+HOST: http://api.wildlifelog.net
+
+# Wildlife Log API
+This is Tom's training api using Apiary.io
+
+# Group Wildlife Sightings 
+Access to resources
+
+## My Sightings [/sightings{?page,size}]
+### Get all my wildlife sightings [GET]
+
++ Parameters
+    + page (required, number, '1')... 'page' number
+    + size (required, number, '10')... page 'size'
+    
++ Request
+
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            x-api-version: 1.0
+        
++ Response 200 (application/json)
+        
+    + Header
+        
+        ETag : "euyfewuyfvew76f7"
+        cache-control: max-age=600
+    
+    + Body
+    
+            {
+                "page" :
+                {
+                    "number" : 1,
+                    "size": 10,
+                    "totalPages": 20
+                },    
+                "wildlife":
+                [
+                    {
+                        "SightedAt" : "2017-12-01T11:00",
+                        "imageUrl" : "http://www.wildaboutgardens.org.uk/img/wildlife/insects/large/bumble-bee.jpg",
+                        "description" : "Bumblebee found at ....",
+                        "tags": [
+                            "Big"
+                            "Stripy"
+                        ]
+                    },    
+                    {
+                        "SightedAt" : "2017-12-01T11:02",
+                        "imageUrl" : "http://wildlifearticles.co.uk/wp-content/uploads/2017/01/93516fd5f5f4c126ceaf8a28fa1a6071.jpg",
+                        "description" : "Fox spotted in ... ",
+                        "tags": [
+                            "Fox"
+                        ]
+                    },
+                    {
+                        "SightedAt" : "2017-12-01T11:03",
+                        "imageUrl" : "http://www.naturephoto-cz.com/fullsize/birds/skylark-158589.jpg",
+                        "description" : "Skylark found on ... ",
+                        "tags": [
+                            "Singing"
+                        ]
+                    }        
+                ]
+            }
