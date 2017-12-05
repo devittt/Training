@@ -11,8 +11,8 @@ Access to resources
 ### Get all my wildlife sightings [GET]
 
 + Parameters
-    + page (required, number, '1')... 'page' number
-    + size (required, number, '10')... page 'size'
+    + page(required,number,'1')...'page'number
+    + size(required,number,'10')... page'size'
     
 + Request
 
@@ -24,19 +24,18 @@ Access to resources
 + Response  200 (application/json)
         
     + Header
-        
+    
         ETag : "euyfewuyfvew76f7"
         cache-control: max-age=600
-    
-    + Body
-    
+        
+        + Body
             {
                 "page" :
-                {
+            {
                     "number" : 1,
                     "size": 10,
                     "totalPages": 20
-                },    
+            },    
                 "sightings" :
                 [
                     {
